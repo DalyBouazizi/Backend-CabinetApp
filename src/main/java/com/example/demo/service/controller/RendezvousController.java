@@ -27,14 +27,14 @@ public class RendezvousController {
         try {
             test = this.rendezvousService.createRendezvous(rendezvous);  // Assign the result of the service call
         } catch (RuntimeException var3) {
-            return ResponseEntity.status(HttpStatus.CONFLICT).body("Error occurred");
+            return ResponseEntity.ok("Error occurred");
         }
 
         // Now you can safely check the value of 'test'
         if (test) {
             return ResponseEntity.ok("Successfully created");
         } else {
-            return ResponseEntity.status(HttpStatus.CONFLICT).body("Medecin already has an appointment at this time.");
+            return ResponseEntity.ok("Medecin already has an appointment at this time.");
         }
     }
 

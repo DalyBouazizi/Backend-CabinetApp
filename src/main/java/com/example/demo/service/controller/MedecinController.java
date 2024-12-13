@@ -23,13 +23,13 @@ public class MedecinController {
         this.medecinService = medecinService;
     }
 
-    @PostMapping({"/create"})
+    @PostMapping()
     public boolean CreateMedecin(@RequestBody Medecin medecin) {
         Medecin Responsemedecin = this.medecinService.createMedecin(medecin);
         return Responsemedecin != null;
     }
 
-    @GetMapping({"/GetAllMed"})
+    @GetMapping()
     public List<Medecin> getAllMedecin() {
         List<Medecin> MedecinsList = this.medecinService.getAllMedecins();
         return MedecinsList;

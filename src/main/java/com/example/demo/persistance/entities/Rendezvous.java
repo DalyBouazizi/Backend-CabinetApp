@@ -6,6 +6,7 @@
 package com.example.demo.persistance.entities;
 
 import com.fasterxml.jackson.annotation.JsonBackReference;
+import com.fasterxml.jackson.annotation.JsonFormat;
 import com.fasterxml.jackson.annotation.JsonIgnoreProperties;
 import jakarta.persistence.CascadeType;
 import jakarta.persistence.Entity;
@@ -26,6 +27,7 @@ public class Rendezvous {
     )
     private Long idRdv;
     private Date dateRdv;
+    @JsonFormat(pattern = "HH:mm:ss") // Ensure the time format is matched
     private Time heureRdv;
     @ManyToOne
     @JoinColumn(
